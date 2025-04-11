@@ -11,9 +11,13 @@ type Person struct {
 	Age  int
 }
 type Client struct {
-	ID  int64
-	IMG Ava	tar
 	Person
+	ID  int64
+	IMG Avatar
+}
+type Client1 struct {
+	Person
+	ID int64
 }
 
 func main() {
@@ -56,6 +60,8 @@ func main() {
 			Age:  20,
 		},
 	}
+	clientP := &Client1{Person{Name: "Vera", Age: 22}, 2} //альтернативаня инициализайия структуры(ВАЖНО без названия полей в основной структуре)
+	fmt.Println(clientP)
 
 	//clientM.person = Person{"Sergey", 20}
 	//clientM.Name = "Sergey"
